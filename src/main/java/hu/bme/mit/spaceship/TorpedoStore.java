@@ -30,7 +30,8 @@ public class TorpedoStore {
 
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
-      new IllegalArgumentException("numberOfTorpedos");
+      // Creating a new Throwable without actually throwing it is useless and is probably due to a mistake, os added a throw
+      throw new IllegalArgumentException("numberOfTorpedos");
     }
 
     boolean success = false;
